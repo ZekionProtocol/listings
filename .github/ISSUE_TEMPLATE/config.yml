@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Zekion documentation
+    url: https://docs.zekion.network
+    about: Protocol and wallet docs (not for listing applications).
+  - name: Product / monorepo issues
+    url: https://github.com/ZekionProtocol/monorepo
+    about: Do not file Token/DApp listing requests on the monorepo.

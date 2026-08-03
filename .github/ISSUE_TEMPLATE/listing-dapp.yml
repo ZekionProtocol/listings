@@ -1,0 +1,79 @@
+name: List a DApp
+description: Request inclusion on the Zekion wallet Discover whitelist.
+title: "[DApp] <NAME>"
+labels: ["listing", "dapp", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        After maintainers label this Issue **approved**, open a PR that appends a tile to `discover/whitelist.json` and references this Issue.
+  - type: input
+    id: name
+    attributes:
+      label: App name
+    validations:
+      required: true
+  - type: input
+    id: id
+    attributes:
+      label: Proposed tile id
+      description: Lowercase slug, e.g. my-app
+      placeholder: my-app
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: webapp
+    attributes:
+      label: Web app URL (opened in wallet browser)
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: logo
+    attributes:
+      label: Logo URL (optional)
+  - type: textarea
+    id: chains
+    attributes:
+      label: Chains supported
+    validations:
+      required: true
+  - type: checkboxes
+    id: providers
+    attributes:
+      label: Integration surfaces
+      options:
+        - label: window.ethereum
+        - label: window.zekion (privacy ops)
+        - label: WalletConnect
+  - type: textarea
+    id: deeplinks
+    attributes:
+      label: Deep-link examples (optional)
+      placeholder: zekion://browse?url=…
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing instructions
+      description: How maintainers can verify connect / SIWE / privacy flows.
+    validations:
+      required: true

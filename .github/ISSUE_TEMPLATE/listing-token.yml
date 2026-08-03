@@ -1,0 +1,88 @@
+name: List a Token
+description: Request Zekion protocol + wallet support for a token (Issue first, then catalog PR).
+title: "[Token] <SYMBOL> on <CHAIN>"
+labels: ["listing", "token", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        After maintainers label this Issue **approved**, open a PR under `tokens/` that references this Issue.
+        On-chain `configureToken` is performed by Zekion operators — merging a PR alone is not enough.
+  - type: input
+    id: project
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email
+    validations:
+      required: true
+  - type: input
+    id: security
+    attributes:
+      label: Security contact
+      placeholder: security@…
+    validations:
+      required: true
+  - type: input
+    id: symbol
+    attributes:
+      label: Token symbol
+    validations:
+      required: true
+  - type: input
+    id: token_key
+    attributes:
+      label: Proposed tokenKey (protocol string)
+      description: Short key used on-chain (e.g. USDT). Must be stable across chains for the same asset.
+    validations:
+      required: true
+  - type: input
+    id: decimals
+    attributes:
+      label: Decimals
+    validations:
+      required: true
+  - type: textarea
+    id: deployments
+    attributes:
+      label: Deployments
+      description: One line per chain — chain name, SLIP-44, contract address (checksummed).
+      placeholder: |
+        BSC · SLIP-44 714 · 0x…
+        Ethereum · SLIP-44 60 · 0x…
+    validations:
+      required: true
+  - type: input
+    id: min_deposit
+    attributes:
+      label: Requested minDeposit (optional)
+      description: Human units or base units — specify which.
+  - type: input
+    id: logo
+    attributes:
+      label: Logo URL (optional)
+      description: Square PNG preferred.
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why list this token?
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing notes
+      description: Verified explorer links, testnet faucet, sample tx hashes.
+    validations:
+      required: true
