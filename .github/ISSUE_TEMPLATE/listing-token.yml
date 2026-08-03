@@ -6,12 +6,13 @@ body:
   - type: markdown
     attributes:
       value: |
+        Required: **website**, **description**, **contract address(es)**, **token icon**.
         After maintainers label this Issue **approved**, open a PR under `tokens/` that references this Issue.
         On-chain `configureToken` is performed by Zekion operators — merging a PR alone is not enough.
   - type: input
     id: project
     attributes:
-      label: Project name
+      label: Project / issuer name
     validations:
       required: true
   - type: input
@@ -21,23 +22,27 @@ body:
       placeholder: https://
     validations:
       required: true
-  - type: input
-    id: contact
+  - type: textarea
+    id: description
     attributes:
-      label: Contact email
+      label: Description
+      description: What the token is and what it is used for (shown to reviewers; may feed wallet metadata later).
+      placeholder: e.g. USD-pegged stablecoin used as the primary settlement asset on …
     validations:
       required: true
   - type: input
-    id: security
+    id: token_name
     attributes:
-      label: Security contact
-      placeholder: security@…
+      label: Token display name
+      description: Full name shown in wallets (e.g. Tether USD), not only the ticker.
+      placeholder: Tether USD
     validations:
       required: true
   - type: input
     id: symbol
     attributes:
-      label: Token symbol
+      label: Token symbol (ticker)
+      placeholder: USDT
     validations:
       required: true
   - type: input
@@ -56,11 +61,32 @@ body:
   - type: textarea
     id: deployments
     attributes:
-      label: Deployments
-      description: One line per chain — chain name, SLIP-44, contract address (checksummed).
+      label: Token contract address(es)
+      description: One line per chain — chain name, SLIP-44, checksummed contract address.
       placeholder: |
         BSC · SLIP-44 714 · 0x…
         Ethereum · SLIP-44 60 · 0x…
+    validations:
+      required: true
+  - type: input
+    id: logo
+    attributes:
+      label: Token icon (logo URL)
+      description: Public HTTPS URL to a square PNG (recommended 128×128 or 256×256, transparent background). Required for wallet display.
+      placeholder: https://…/token.png
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email
+    validations:
+      required: true
+  - type: input
+    id: security
+    attributes:
+      label: Security contact
+      placeholder: security@…
     validations:
       required: true
   - type: input
@@ -68,15 +94,10 @@ body:
     attributes:
       label: Requested minDeposit (optional)
       description: Human units or base units — specify which.
-  - type: input
-    id: logo
-    attributes:
-      label: Logo URL (optional)
-      description: Square PNG preferred.
   - type: textarea
     id: rationale
     attributes:
-      label: Why list this token?
+      label: Why list this token on Zekion?
     validations:
       required: true
   - type: textarea

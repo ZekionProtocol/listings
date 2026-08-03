@@ -6,45 +6,54 @@ body:
   - type: markdown
     attributes:
       value: |
+        Required: **display name**, **description**, **website / web app URL**, **app icon**.
         After maintainers label this Issue **approved**, open a PR that appends a tile to `discover/whitelist.json` and references this Issue.
   - type: input
     id: name
     attributes:
-      label: App name
+      label: App display name
+      description: Name shown on the Discover tile in the Zekion wallet.
+      placeholder: My App
     validations:
       required: true
   - type: input
     id: id
     attributes:
       label: Proposed tile id
-      description: Lowercase slug, e.g. my-app
+      description: Lowercase slug used in catalog JSON, e.g. my-app
       placeholder: my-app
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
-      label: Short description
+      label: Description
+      description: Short blurb for reviewers (and future Discover subtitle if we add one).
     validations:
       required: true
   - type: input
     id: homepage
     attributes:
-      label: Homepage
+      label: Website / homepage
       placeholder: https://
     validations:
       required: true
   - type: input
     id: webapp
     attributes:
-      label: Web app URL (opened in wallet browser)
-      placeholder: https://
+      label: Web app URL
+      description: HTTPS URL opened inside the wallet browser when the user taps the tile.
+      placeholder: https://app.example.com
     validations:
       required: true
   - type: input
     id: logo
     attributes:
-      label: Logo URL (optional)
+      label: App icon (logo URL)
+      description: Public HTTPS URL to a square PNG/SVG suitable for the Discover tile. Required.
+      placeholder: https://…/icon.png
+    validations:
+      required: true
   - type: textarea
     id: chains
     attributes:

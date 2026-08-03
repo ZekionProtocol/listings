@@ -4,6 +4,18 @@ Public registry for **third-party Tokens** and **DApps** on Zekion.
 
 Do **not** open listing requests on `monorepo` or other product repos. Use this repository only.
 
+## Required application fields
+
+| Token | DApp |
+|-------|------|
+| Website | Website / homepage |
+| Description | Description |
+| Token display name + symbol | **App display name** |
+| Contract address(es) per chain | Web app URL |
+| **Token icon** (HTTPS logo URL) | **App icon** (HTTPS logo URL) |
+
+Optional extras (contacts, security email, test notes, deep links) are still collected in the Issue forms.
+
 ## How to apply
 
 | What | Open an Issue |

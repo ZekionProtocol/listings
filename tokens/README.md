@@ -12,7 +12,9 @@ One JSON file per `tokenKey` (stable across chains), e.g. `USDT.json`:
   "symbol": "USDT",
   "name": "Tether USD",
   "decimals": 6,
-  "logoURI": "https://…",
+  "description": "USD-pegged stablecoin …",
+  "logoURI": "https://…/usdt.png",
+  "website": "https://…",
   "deployments": [
     {
       "chain": "bsc",
@@ -24,10 +26,13 @@ One JSON file per `tokenKey` (stable across chains), e.g. `USDT.json`:
 }
 ```
 
+Required for a complete listing: `name`, `symbol`, `tokenKey`, `decimals`, `logoURI`, `website`, at least one `deployments[].address`, and `listingIssue`.
+
 Field notes:
 
 - `tokenKey` must match the on-chain HubConfig / Vault key operators will configure.
 - `decimals` must match the ERC-20/TRC-20 contract.
+- `logoURI` must be a publicly reachable HTTPS image (square PNG preferred).
 - `listingIssue` is the GitHub Issue number in this repo.
 
 Do not invent keys that collide with existing protocol assets without maintainer approval.
